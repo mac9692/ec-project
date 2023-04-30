@@ -7,12 +7,20 @@ import com.plateer.ec.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService {
     private final MemberMapper memberMapper;
+
+    @Override
+    public List<MemberInfoResponse> getMemberInfoList() {
+        return memberMapper.getMemberInfoList();
+    }
+
     @Override
     public MemberInfoResponse getMemberInfo(MemberInfoRequest request) {
-        return MemberInfoResponse.entityToDto(memberMapper.getMemberInfo(request));
+        return memberMapper.getMemberInfo(request);
     }
 }
