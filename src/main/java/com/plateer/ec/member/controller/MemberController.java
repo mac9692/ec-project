@@ -12,20 +12,20 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/member")
+@RequestMapping("/member")
 @RequiredArgsConstructor
 public class MemberController {
 
     private final MemberService memberService;
 
-    @GetMapping("")
+    @GetMapping("memberList")
     public Response<List<MemberInfoResponse>> getMemberInfoList() {
         Response<List<MemberInfoResponse>> response = new Response<>();
         response.setData(memberService.getMemberInfoList());
         return response;
     }
 
-    @GetMapping("member")
+    @GetMapping("")
     public Response<MemberInfoResponse> getMemberInfo(MemberInfoRequest request) {
         Response<MemberInfoResponse> response = new Response<>();
         response.setData(memberService.getMemberInfo(request));
