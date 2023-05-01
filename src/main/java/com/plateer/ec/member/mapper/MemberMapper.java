@@ -10,4 +10,6 @@ import java.util.List;
 public interface MemberMapper {
     List<MemberInfoResponse> getMemberInfoList();
     MemberInfoResponse getMemberInfo(MemberInfoRequest request);
+
+    Long registerMemberInfo(MemberInfoRequest request);
 }

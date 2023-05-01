@@ -14,4 +14,19 @@
           FROM ET_MBR_BASE
          WHERE mbr_no = #{mbrNo}
     </select>
+
+    <insert id="registerMemberInfo">
+        INSERT INTO ET_MBR_BASE (
+            mbr_name,
+            mbr_phone_number,
+            mbr_address,
+            mbr_address_detail
+        )
+        VALUES (
+                #{mbrName},
+                #{mbrPhoneNumber},
+                #{mbrAddress},
+                #{mbrAddressDetail}
+        )
+    </insert>
 </mapper>

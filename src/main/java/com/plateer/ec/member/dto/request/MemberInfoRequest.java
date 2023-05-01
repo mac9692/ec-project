@@ -7,4 +7,8 @@ import lombok.Setter;
 @Setter
 public class MemberInfoRequest {
     private String mbrNo;
+    private String mbrName;
+    private String mbrPhoneNumber;
+    private String mbrAddress;
+    private String mbrAddressDetail;
 }

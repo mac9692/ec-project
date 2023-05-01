@@ -5,9 +5,7 @@ import com.plateer.ec.member.dto.request.MemberInfoRequest;
 import com.plateer.ec.member.dto.response.MemberInfoResponse;
 import com.plateer.ec.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,10 +23,17 @@ public class MemberController {
         return response;
     }
 
-    @GetMapping("")
+    @GetMapping
     public Response<MemberInfoResponse> getMemberInfo(MemberInfoRequest request) {
         Response<MemberInfoResponse> response = new Response<>();
         response.setData(memberService.getMemberInfo(request));
+        return response;
+    }
+
+    @PostMapping
+    public Response<Long> registerMemberInfo(@RequestBody MemberInfoRequest request) {
+        Response<Long> response = new Response<>();
+        response.setData(memberService.registerMemberInfo(request));
         return response;
     }
 }

@@ -8,4 +8,6 @@ import java.util.List;
 public interface MemberService {
     List<MemberInfoResponse> getMemberInfoList();
     MemberInfoResponse getMemberInfo(MemberInfoRequest request);
+
+    Long registerMemberInfo(MemberInfoRequest request);
 }

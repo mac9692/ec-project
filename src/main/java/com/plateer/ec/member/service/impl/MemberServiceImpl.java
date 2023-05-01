@@ -23,4 +23,9 @@ public class MemberServiceImpl implements MemberService {
     public MemberInfoResponse getMemberInfo(MemberInfoRequest request) {
         return memberMapper.getMemberInfo(request);
     }
+
+    @Override
+    public Long registerMemberInfo(MemberInfoRequest request) {
+        return memberMapper.registerMemberInfo(request);
+    }
 }
