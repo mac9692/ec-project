@@ -13,10 +13,9 @@ import java.util.List;
 @RequestMapping("/member")
 @RequiredArgsConstructor
 public class MemberController {
-
     private final MemberService memberService;
 
-    @GetMapping("memberList")
+    @GetMapping("list")
     public Response<List<MemberInfoResponse>> getMemberInfoList() {
         Response<List<MemberInfoResponse>> response = new Response<>();
         response.setData(memberService.getMemberInfoList());
